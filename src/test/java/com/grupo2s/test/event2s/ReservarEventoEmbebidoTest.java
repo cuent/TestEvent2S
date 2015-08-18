@@ -21,10 +21,12 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
+ * Test para las reservas de eventos mediante código embebido en la pagina
+ * {@link http://test.event2s.com/}
  *
- * @author cuent
+ * @author Xavier Sumba (xavier.sumba93@ucuenca.ec)
  */
-public class TestReservarEventoEmbebido {
+public class ReservarEventoEmbebidoTest {
 
     private Selenium selenium;
     private WebDriverWait wait;

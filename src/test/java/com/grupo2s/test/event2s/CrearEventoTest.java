@@ -12,7 +12,13 @@ import static org.apache.commons.lang3.StringUtils.join;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestCrearEvento {
+/**
+ * Test para la creación de un evendo en la pagina
+ * {@link http://test.event2s.com/}
+ *
+ * @author Xavier Sumba (xavier.sumba93@ucuenca.ec)
+ */
+public class CrearEventoTest {
 
     private Selenium selenium;
     private WebDriverWait wait;
