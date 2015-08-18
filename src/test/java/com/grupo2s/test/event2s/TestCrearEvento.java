@@ -1,4 +1,4 @@
-package test.demo;
+package com.grupo2s.test.event2s;
 
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
