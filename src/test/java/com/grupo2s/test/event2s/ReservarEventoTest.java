@@ -74,7 +74,7 @@ public class ReservarEventoTest {
 
         assertEquals("Event2S", selenium.getTitle());
         selenium.click("id=dataTableEventos:0:cmb_accion");
-        selenium.click("//div[@id='dataTableEventos:0:j_idt435']/ul/li[2]/a/span");
+        selenium.click("//div[@id='dataTableEventos:0:j_idt474']/ul/li[2]/a/span");
         selenium.waitForPageToLoad("3000");
         Thread.sleep(3000);
         assertTrue(
@@ -101,7 +101,7 @@ public class ReservarEventoTest {
         }
 
         selenium.click("//span[@id='dt_detalle_Boleto:0:txt_cantidad']/a/span/span");
-        selenium.click("id=j_idt551");
+        selenium.click("id=j_idt590");
         for (int second = 0;; second++) {
             if (second >= 60) {
                 fail("timeout");
@@ -131,7 +131,7 @@ public class ReservarEventoTest {
         selenium.type("id=txt_provincia", "Azuay");
         selenium.type("id=txt_cod_postal", "10101");
         selenium.type("id=txt_pais", "Ecuador");
-        selenium.click("id=j_idt552");
+        selenium.click("id=j_idt591");
         for (int second = 0;; second++) {
             if (second >= 60) {
                 fail("timeout");
@@ -154,7 +154,7 @@ public class ReservarEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("//div[@id='dtg_forma_pago:0:j_idt401']/div[2]/span")) {
+                if (selenium.isVisible("//div[@id='dtg_forma_pago:0:j_idt440']/div[2]/span")) {
                     break;
                 }
             } catch (Exception e) {
@@ -162,7 +162,7 @@ public class ReservarEventoTest {
             Thread.sleep(1000);
         }
 
-        selenium.click("//div[@id='dtg_forma_pago:0:j_idt401']/div[2]/span");
+        selenium.click("//div[@id='dtg_forma_pago:0:j_idt440']/div[2]/span");
         Thread.sleep(3000);
 
         selenium.type("id=txt_referencia_reg", "ABCD12");
@@ -175,14 +175,14 @@ public class ReservarEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("id=j_idt427")) {
+                if (selenium.isVisible("id=j_idt466")) {
                     break;
                 }
             } catch (Exception e) {
             }
             Thread.sleep(1000);
         }
-        selenium.click("id=j_idt427");
+        selenium.click("id=j_idt466");
         assertTrue(
                 "The page title should start with the search string after the search.",
                 wait.until(new ExpectedCondition<Boolean>() {

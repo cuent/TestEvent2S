@@ -54,7 +54,7 @@ public class CrearEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("id=j_idt252")) {
+                if (selenium.isVisible("//div[@id='tabAcordion']/h3")) {
                     break;
                 }
             } catch (Exception e) {
@@ -62,7 +62,42 @@ public class CrearEventoTest {
             Thread.sleep(1000);
         }
 
-        selenium.click("id=j_idt252");
+        selenium.click("//div[@id='tabAcordion']/h3");
+        selenium.click("//div[@id='tabAcordion:cboCategoriaTB']/div[3]");
+        selenium.click("//div[@id='tabAcordion:cboCategoriaTB_panel']/div/ul/li[3]");
+        for (int second = 0;; second++) {
+            if (second >= 60) {
+                fail("timeout");
+            }
+            try {
+                if (selenium.isVisible("id=tabAcordion:cboTemaTB_label")) {
+                    break;
+                }
+            } catch (Exception e) {
+            }
+            Thread.sleep(1000);
+        }
+        Thread.sleep(2000);
+
+        selenium.click("id=tabAcordion:cboTemaTB_label");
+        Thread.sleep(3000);
+        selenium.click("//div[@id='tabAcordion:cboTemaTB_panel']/div/ul/li[6]");
+        for (int second = 0;; second++) {
+            if (second >= 60) {
+                fail("timeout");
+            }
+            try {
+                if (selenium.isVisible("id=tabAcordion:j_idt291")) {
+                    break;
+                }
+            } catch (Exception e) {
+            }
+            Thread.sleep(1000);
+        }
+        selenium.click("id=tabAcordion:j_idt291");
+
+        assertEquals("Event2S", selenium.getTitle());
+
         selenium.waitForPageToLoad("3000");
         assertEquals("Event2S", selenium.getTitle());
         for (int second = 0;; second++) {
@@ -70,7 +105,7 @@ public class CrearEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("id=j_idt504")) {
+                if (selenium.isVisible("id=j_idt548")) {
                     break;
                 }
             } catch (Exception e) {
@@ -78,13 +113,10 @@ public class CrearEventoTest {
             Thread.sleep(1000);
         }
 
-        selenium.click("id=j_idt504");
+        selenium.click("id=j_idt548");
         selenium.type("id=txtNombreEvento", "Evento Prueba Selenium");
-        selenium.click("//div[@id='cboCategoria']/div[3]");
-        selenium.click("//div[@id='cboCategoria_panel']/div/ul/li[4]");
-        selenium.click("//div[@id='cboTema']/div[3]");
-        selenium.click("//div[@id='cboTema_panel']/div/ul/li[6]");
-        selenium.click("id=j_idt420");
+
+        selenium.click("id=j_idt464");
         for (int second = 0;; second++) {
             if (second >= 60) {
                 fail("timeout");
@@ -103,7 +135,7 @@ public class CrearEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("//div[@id='j_idt428']/div/div/div[2]")) {
+                if (selenium.isVisible("//div[@id='j_idt472']/div[2]/div/div[2]/iframe")) {
                     break;
                 }
             } catch (Exception e) {
@@ -111,11 +143,11 @@ public class CrearEventoTest {
             Thread.sleep(1000);
         }
 
-        selenium.click("//div[@id='j_idt428']/div/div/div[2]");
+        selenium.click("//div[@id='j_idt472']/div[2]/div/div[2]/iframe");
         selenium.click("css=div.gmnoprint");
         selenium.type("id=nombreLugar", "Hotel Oro Verde");
-        selenium.click("id=j_idt440_input");
-        selenium.type("id=j_idt440_input", "06/08/2030");
+        selenium.click("id=j_idt484_input");
+        selenium.type("id=j_idt484_input", "06/08/2030");
         Thread.sleep(3000);
         for (int second = 0;; second++) {
             if (second >= 60) {
@@ -145,22 +177,23 @@ public class CrearEventoTest {
         }
 
         selenium.click("id=cmdAceptarSede");
-        selenium.click("id=j_idt425");
+        selenium.click("id=j_idt469");
         selenium.waitForPageToLoad("3000");
         assertEquals("Event2S", selenium.getTitle());
-        selenium.click("id=j_idt399");
+        selenium.click("id=j_idt438");
         selenium.waitForPageToLoad("3000");
         assertEquals("Event2S", selenium.getTitle());
         selenium.type("id=nombreBol", "VIP");
         selenium.click("id=cmdAgregaBoleto");
         Thread.sleep(3000);
-        selenium.click("//div[@id='tableBoletos:0:j_idt403']/div/div");
-        selenium.type("id=tableBoletos:0:j_idt406", "500");
+        selenium.click("//div[@id='tableBoletos:0:j_idt443']/div/div");
+        selenium.type("id=tableBoletos:0:j_idt446", "500");
         selenium.click("id=tableBoletos:0:preciosParaBoleto");
-        selenium.type("id=tableBoletos:0:j_idt401", "60");
-        selenium.click("//div[@id='j_idt364_content']/table/tbody/tr[5]/td");
-        selenium.click("id=j_idt557");
+        selenium.type("id=tableBoletos:0:j_idt441", "60");
+        selenium.click("//div[@id='j_idt403_content']/table/tbody/tr[4]/td");
+        selenium.click("id=j_idt599");
         selenium.waitForPageToLoad("3000");
+        Thread.sleep(3000);
         assertTrue(
                 "The page title should start with the search string after the search.",
                 wait.until(new ExpectedCondition<Boolean>() {
@@ -168,7 +201,7 @@ public class CrearEventoTest {
                         return d.getTitle().toLowerCase().startsWith("event2s");
                     }
                 }));
-        selenium.click("id=j_idt521");
+        selenium.click("id=j_idt570");
         selenium.waitForPageToLoad("3000");
         assertTrue(
                 "The page title should start with the search string after the search.",
@@ -182,28 +215,42 @@ public class CrearEventoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isElementPresent("id=j_idt643")) {
+                if (selenium.isElementPresent("id=j_idt682")) {
                     break;
                 }
             } catch (Exception e) {
             }
             Thread.sleep(1000);
         }
-        selenium.click("id=j_idt643");
-        for (int second = 0;; second++) {
-            if (second >= 60) {
-                fail("timeout");
-            }
-            try {
-                if (selenium.isElementPresent("id=j_idt650")) {
-                    break;
-                }
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
+        selenium.click("id=j_idt682");
 
-        selenium.click("id=j_idt650");
+        for (int second = 0;; second++) {
+            if (second >= 60) {
+                fail("timeout");
+            }
+            try {
+                if (selenium.isElementPresent("id=j_idt689")) {
+                    break;
+                }
+            } catch (Exception e) {
+            }
+            Thread.sleep(1000);
+        }
+        selenium.click("id=j_idt689");
+//        for (int second = 0;; second++) {
+//            if (second >= 60) {
+//                fail("timeout");
+//            }
+//            try {
+//                if (selenium.isElementPresent("id=j_idt650")) {
+//                    break;
+//                }
+//            } catch (Exception e) {
+//            }
+//            Thread.sleep(1000);
+//        }
+//
+//        selenium.click("id=j_idt650");
         selenium.waitForPageToLoad("3000");
         assertEquals("Event2S", selenium.getTitle());
         for (int second = 0;; second++) {
@@ -218,19 +265,9 @@ public class CrearEventoTest {
             }
             Thread.sleep(1000);
         }
+        Thread.sleep(2000);
         selenium.click("id=btn_mn_perfil");
-        for (int second = 0;; second++) {
-            if (second >= 60) {
-                fail("timeout");
-            }
-            try {
-                if (selenium.isElementPresent("id=btn_logout")) {
-                    break;
-                }
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
+
         Thread.sleep(3000);
         selenium.click("id=btn_logout");
         selenium.waitForPageToLoad("3000");

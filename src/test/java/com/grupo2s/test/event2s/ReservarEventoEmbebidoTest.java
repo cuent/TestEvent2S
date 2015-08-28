@@ -60,7 +60,7 @@ public class ReservarEventoEmbebidoTest {
         selenium.waitForPageToLoad("30000");
         assertEquals("Event2S", selenium.getTitle());
         selenium.click("id=dataTableEventos:0:cmb_accion");
-        selenium.click("//div[@id='dataTableEventos:0:j_idt435']/ul/li[4]/a/span");
+        selenium.click("//div[@id='dataTableEventos:0:j_idt474']/ul/li[4]/a/span");
         selenium.waitForPageToLoad("3000");
         assertEquals("Event2S", selenium.getTitle());
         for (int second = 0;; second++) {
@@ -68,7 +68,7 @@ public class ReservarEventoEmbebidoTest {
                 fail("timeout");
             }
             try {
-                if (selenium.isVisible("css=#j_idt338_content > a > span.gray.Fs14")) {
+                if (selenium.isVisible("css=#j_idt378_content > a > span.gray.Fs14")) {
                     break;
                 }
             } catch (Exception e) {
@@ -77,7 +77,7 @@ public class ReservarEventoEmbebidoTest {
         }
         String mwh = driver.getWindowHandle();
 
-        selenium.click("css=#j_idt338_content > a > span.gray.Fs14");
+        selenium.click("css=#j_idt378_content > a > span.gray.Fs14");
         selenium.waitForPageToLoad("5000");
         assertEquals("Event2S", selenium.getTitle());
 
@@ -157,7 +157,7 @@ public class ReservarEventoEmbebidoTest {
         selenium.waitForPageToLoad("3000");
         Thread.sleep(3000);
         selenium.click("//div[@id='dtg_forma_pago:0:j_idt171']/div[2]/span");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         selenium.click("id=cmd_confirmar");
         assertTrue(
                 "The page title should start with the search string after the search.",

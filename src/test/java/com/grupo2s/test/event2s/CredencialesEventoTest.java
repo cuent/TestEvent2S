@@ -19,8 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Test para las credenciales de un evento.
- * {@link http://test.event2s.com/}
+ * Test para las credenciales de un evento. {@link http://test.event2s.com/}
  *
  * @author Xavier Sumba (xavier.sumba93@ucuenca.ec)
  */
@@ -77,8 +76,10 @@ public class CredencialesEventoTest {
         selenium.click("id=dataTableEventos:0:cmb_accion");
         selenium.click("link=Credenciales");
         Thread.sleep(5000);
-        assertEquals("", selenium.getText("id=qr_code"));
-        selenium.click("id=j_idt471");
+        assertEquals("Vista Previa", selenium.getText("id=j_idt515"));
+        selenium.click("//div[@id='j_idt501']/div[3]/span");
+        selenium.click("//div[@id='j_idt501_panel']/div/ul/li[2]");
+        selenium.click("id=j_idt511");
         Thread.sleep(3000);
         selenium.click("//div[@id='dlg_credenciales']/div/a/span");
         Thread.sleep(3000);
